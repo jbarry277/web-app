@@ -1,33 +1,21 @@
 import * as React from 'react';
-import DropArea from './Components/DropArea/DropArea'
-import Header from './Components/Header/Header'
-import Result from './Components/Result/Result'
+import './App.css';
 
-interface IState {
-  result: string
-  filelength: number
-}
+import logo from './logo.svg';
 
-class App extends React.Component<{}, IState>{
-  public constructor(props: any) {
-    super(props)
-    this.state = {
-      result: "",
-      filelength: 0,
-    }
-  }
-
+class App extends React.Component {
   public render() {
     return (
-      <div>
-        <Header />
-        <DropArea setResults={this.resultstate} />
-        <Result result={this.state.result} filelength={this.state.filelength} />
+      <div className="App">
+        <header className="App-header">
+          <img src={logo} className="App-logo" alt="logo" />
+          <h1 className="App-title">Welcome to React</h1>
+        </header>
+        <p className="App-intro">
+          To get started, edit <code>src/App.tsx</code> and save to reload.
+        </p>
       </div>
     );
-  }
-  public resultstate = (resultString: string, filelen: any) => {
-    this.setState({ result: resultString, filelength: filelen })
   }
 }
 
